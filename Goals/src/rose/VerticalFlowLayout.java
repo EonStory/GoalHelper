@@ -1,3 +1,5 @@
+//none of this is file written by EonStory!
+
 package rose;
 /*
  * @(#)VerticalFlowLayout.java	1.52 03/12/19

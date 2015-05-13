@@ -22,7 +22,7 @@ import javax.swing.table.TableRowSorter;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class GoalGraph9 extends JFrame {
+public class GoalGraph extends JFrame {
 	public ArrayList<Goal> goals = new ArrayList<Goal>();	
 	public GoalPanel goalPanel = new GoalPanel(0, 1, 100, 2400);	
 	//public GoalPanel(int xStart, int yStart, int xEnd, int yEnd) { //null LOL null
@@ -65,7 +65,7 @@ public class GoalGraph9 extends JFrame {
 	String[] inProgressGoalColumns = {"Work Load","Time Limit", "Start Date","End Date", "Time Remaining", "Status"};
 	String[] awaitingStatusGoalColumns = {"Work Load","Time Limit", "Start Date","End Date", "Status"};
 	
-	public GoalGraph9() {		
+	public GoalGraph() {		
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 0));			
 		add(goalPanel);
 		
@@ -280,7 +280,7 @@ public class GoalGraph9 extends JFrame {
 				model.addRow(bob.toRow());
 			}
 			else if (e.getSource() == jbSave) {
-				int returnVal = fc.showSaveDialog(GoalGraph9.this);
+				int returnVal = fc.showSaveDialog(GoalGraph.this);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					System.out.println("Saved as: ");
 					System.out.println(fc.getName(fc.getSelectedFile()));
@@ -301,7 +301,7 @@ public class GoalGraph9 extends JFrame {
 				}				
 			}
 			else if (e.getSource() == jbLoad) {
-				int returnVal = fc.showOpenDialog(GoalGraph9.this); // ???
+				int returnVal = fc.showOpenDialog(GoalGraph.this); // ???
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					System.out.println("APPROVED");
 					try {
@@ -413,7 +413,7 @@ public class GoalGraph9 extends JFrame {
 	}
 	
 	public static void main(String[] args) {
-		GoalGraph9 frame = new GoalGraph9();
+		GoalGraph frame = new GoalGraph();
 		frame.setTitle("Goal Achievements");
 		frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
